@@ -1,101 +1,323 @@
  RecId   Time             Action              PalletID PalletTypeID
      1      1   StartDepalletize                     1            1
-     2    404  finishDepalletize                     1            1
-     3    405   StartDepalletize                     2            2
-     4    681  finishDepalletize                     2            2
-     5    682   StartDepalletize                     3            3
-     6    915  finishDepalletize                     3            3
-     7    916   StartDepalletize                     4            4
-     8   1254  finishDepalletize                     4            4
-     9   1255   StartDepalletize                     5            5
-    10   1512  finishDepalletize                     5            5
-    11   1513   StartDepalletize                     6            6
-    12   1756  finishDepalletize                     6            6
-    13   1757   StartDepalletize                     7            7
-    14   2089  finishDepalletize                     7            7
-    15   2090   StartDepalletize                     8            8
-    16   2367  finishDepalletize                     8            8
-    17   2368   StartDepalletize                     9            9
-    18   2556  finishDepalletize                     9            9
-    19   2557   StartDepalletize                    10           10
-    20   2856  finishDepalletize                    10           10
-    21   2857   StartDepalletize                    11           11
-    22   3142  finishDepalletize                    11           11
-    23   3143   StartDepalletize                    12           12
-    24   3374  finishDepalletize                    12           12
-    25   3375   StartDepalletize                    13           13
-    26   3590  finishDepalletize                    13           13
-    27   3591   StartDepalletize                    14           14
-    28   3801  finishDepalletize                    14           14
-    29   3802   StartDepalletize                    15           15
+     2    408  finishDepalletize                     1            1
+     3    409   StartDepalletize                     2            2
+     4    722  finishDepalletize                     2            2
+     5    723   StartDepalletize                     3            3
+     6    998  finishDepalletize                     3            3
+     7    999   StartDepalletize                     4            4
+     8   1316  finishDepalletize                     4            4
+     9   1317   StartDepalletize                     5            5
+    10   1575  finishDepalletize                     5            5
+    11   1576   StartDepalletize                     6            6
+    12   1839  finishDepalletize                     6            6
+    13   1840   StartDepalletize                     7            7
+    14   2150  finishDepalletize                     7            7
+    15   2151   StartDepalletize                     8            8
+    16   2413  finishDepalletize                     8            8
+    17   2414   StartDepalletize                     9            9
+    18   2630  finishDepalletize                     9            9
+    19   2631   StartDepalletize                    10           10
+    20   2892  finishDepalletize                    10           10
+    21   2893   StartDepalletize                    11           11
+    22   3202  finishDepalletize                    11           11
+    23   3203   StartDepalletize                    12           12
+    24   3417  finishDepalletize                    12           12
+    25   3418   StartDepalletize                    13           13
+    26   3583  finishDepalletize                    13           13
+    27   3584   StartDepalletize                    14           14
+    28   3827  finishDepalletize                    14           14
+    29   3828   StartDepalletize                    15           15
     30   4188  finishDepalletize                    15           15
     31   4189   StartDepalletize                    16           16
-    32   4375  finishDepalletize                    16           16
-    33   4376   StartDepalletize                    17           17
-    34   4497  finishDepalletize                    17           17
-    35   4498   StartDepalletize                    18           18
-    36   4688  finishDepalletize                    18           18
-    37   4689   StartDepalletize                    19           19
-    38   4830  finishDepalletize                    19           19
-    39   4831   StartDepalletize                    20           20
-    40   4975  finishDepalletize                    20           20
-    41   4976   StartDepalletize                    21           21
-    42   5092  finishDepalletize                    21           21
-    43   5093   StartDepalletize                    22           22
-    44   5205  finishDepalletize                    22           22
-    45   5206   StartDepalletize                    23           23
-    46   5305  finishDepalletize                    23           23
-    47   5306   StartDepalletize                    24           24
-    48   5387  finishDepalletize                    24           24
-    49   5388   StartDepalletize                    25           25
-    50   5479  finishDepalletize                    25           25
-    51   5480   StartDepalletize                    26           26
-    52   5571  finishDepalletize                    26           26
-    53   5572   StartDepalletize                    27           27
-    54   5722  finishDepalletize                    27           27
-    55   5723   StartDepalletize                    28           28
-    56   5809  finishDepalletize                    28           28
-    57   5810   StartDepalletize                    29           29
-    58   5928  finishDepalletize                    29           29
-    59   5929   StartDepalletize                    30           30
-    60   5999  finishDepalletize                    30           30
-    61   6000   StartDepalletize                    31           31
-    62   6181  finishDepalletize                    31           31
-    63   6182   StartDepalletize                    32           32
-    64   6257  finishDepalletize                    32           32
-    65   6258   StartDepalletize                    33           33
-    66   6320  finishDepalletize                    33           33
-    67   6321   StartDepalletize                    34           34
-    68   6443  finishDepalletize                    34           34
-    69   6444   StartDepalletize                    35           35
-    70   6517  finishDepalletize                    35           35
-    71   6518   StartDepalletize                    36           36
-    72   6597  finishDepalletize                    36           36
-    73   6598   StartDepalletize                    37           37
-    74   6667  finishDepalletize                    37           37
-    75   6668   StartDepalletize                    38           38
-    76   6773  finishDepalletize                    38           38
-    77   6774   StartDepalletize                    39           39
-    78   6882  finishDepalletize                    39           39
-    79   6883   StartDepalletize                    40           40
-    80   6970  finishDepalletize                    40           40
-    81   6971   StartDepalletize                    41           41
-    82   7069  finishDepalletize                    41           41
-    83   7070   StartDepalletize                    42           42
-    84   7188  finishDepalletize                    42           42
-    85   7189   StartDepalletize                    43           43
-    86   7285  finishDepalletize                    43           43
-    87   7286   StartDepalletize                    44           44
-    88   7362  finishDepalletize                    44           44
-    89   7363   StartDepalletize                    45           45
-    90   7446  finishDepalletize                    45           45
-    91   7447   StartDepalletize                    46           46
-    92   7532  finishDepalletize                    46           46
-    93   7533   StartDepalletize                    47           47
-    94   7596  finishDepalletize                    47           47
-    95   7597   StartDepalletize                    48           48
-    96   7681  finishDepalletize                    48           48
-    97   7682   StartDepalletize                    49           49
-    98   7738  finishDepalletize                    49           49
-    99   7739   StartDepalletize                    50           50
-   100   7742    finishPalletize                       
+    32   4366  finishDepalletize                    16           16
+    33   4367   StartDepalletize                    17           17
+    34   4486  finishDepalletize                    17           17
+    35   4487   StartDepalletize                    18           18
+    36   4663  finishDepalletize                    18           18
+    37   4664   StartDepalletize                    19           19
+    38   4791  finishDepalletize                    19           19
+    39   4792   StartDepalletize                    20           20
+    40   4957  finishDepalletize                    20           20
+    41   4958   StartDepalletize                    21           21
+    42   5085  finishDepalletize                    21           21
+    43   5086   StartDepalletize                    22           22
+    44   5140  finishDepalletize                    22           22
+    45   5141   StartDepalletize                    23           23
+    46   5240  finishDepalletize                    23           23
+    47   5241   StartDepalletize                    24           24
+    48   5319  finishDepalletize                    24           24
+    49   5320   StartDepalletize                    25           25
+    50   5393  finishDepalletize                    25           25
+    51   5394   StartDepalletize                    26           26
+    52   5457  finishDepalletize                    26           26
+    53   5458   StartDepalletize                    27           27
+    54   5607  finishDepalletize                    27           27
+    55   5608   StartDepalletize                    28           28
+    56   5690  finishDepalletize                    28           28
+    57   5691   StartDepalletize                    29           29
+    58   5820  finishDepalletize                    29           29
+    59   5821   StartDepalletize                    30           30
+    60   5885  finishDepalletize                    30           30
+    61   5886   StartDepalletize                    31           31
+    62   6067  finishDepalletize                    31           31
+    63   6068   StartDepalletize                    32           32
+    64   6143  finishDepalletize                    32           32
+    65   6144   StartDepalletize                    33           33
+    66   6219  finishDepalletize                    33           33
+    67   6220   StartDepalletize                    34           34
+    68   6327  finishDepalletize                    34           34
+    69   6328   StartDepalletize                    35           35
+    70   6402  finishDepalletize                    35           35
+    71   6403   StartDepalletize                    36           36
+    72   6471  finishDepalletize                    36           36
+    73   6472   StartDepalletize                    37           37
+    74   6535  finishDepalletize                    37           37
+    75   6536   StartDepalletize                    38           38
+    76   6642  finishDepalletize                    38           38
+    77   6643   StartDepalletize                    39           39
+    78   6768  finishDepalletize                    39           39
+    79   6769   StartDepalletize                    40           40
+    80   6881  finishDepalletize                    40           40
+    81   6882   StartDepalletize                    41           41
+    82   6993  finishDepalletize                    41           41
+    83   6994   StartDepalletize                    42           42
+    84   7114  finishDepalletize                    42           42
+    85   7115   StartDepalletize                    43           43
+    86   7248  finishDepalletize                    43           43
+    87   7249   StartDepalletize                    44           44
+    88   7364  finishDepalletize                    44           44
+    89   7365   StartDepalletize                    45           45
+    90   7444  finishDepalletize                    45           45
+    91   7445   StartDepalletize                    46           46
+    92   7538  finishDepalletize                    46           46
+    93   7539   StartDepalletize                    47           47
+    94   7608  finishDepalletize                    47           47
+    95   7609   StartDepalletize                    48           48
+    96   7679  finishDepalletize                    48           48
+    97   7680   StartDepalletize                    49           49
+    98   7731  finishDepalletize                    49           49
+    99   7732   StartDepalletize                    50           50
+   100   7733     startPalletize   1111141001011149551
+
+   101   7794  finishDepalletize                    50           50
+   102   8658    finishPalletize  1111141001011149551
+
+   103   8658     startPalletize   1111141001011149550
+
+   104   9230    finishPalletize  1111141001011149550
+
+   105   9230     startPalletize 111114100101114954954
+
+   106   9608    finishPalletize 111114100101114954954
+
+   107   9608     startPalletize   1111141001011149557
+
+   108   9726   StartDepalletize                    51            6
+   109  10025  finishDepalletize                    51            6
+   110  10242   StartDepalletize                    52            4
+   111  10483  finishDepalletize                    52            4
+   112  10484   StartDepalletize                    53            3
+   113  10660  finishDepalletize                    53            3
+   114  10726    finishPalletize  1111141001011149557
+
+   115  10726     startPalletize 111114100101114954950
+
+   116  10948   StartDepalletize                    54            1
+   117  11155  finishDepalletize                    54            1
+   118  11156   StartDepalletize                    55            2
+   119  11378  finishDepalletize                    55            2
+   120  11379   StartDepalletize                    56            5
+   121  11624  finishDepalletize                    56            5
+   122  11795   StartDepalletize                    57            8
+   123  12060  finishDepalletize                    57            8
+   124  12135   StartDepalletize                    58           11
+   125  12374    finishPalletize 111114100101114954950
+
+   126  12374     startPalletize   1111141001011149555
+
+   127  12376  finishDepalletize                    58           11
+   128  12919   StartDepalletize                    59            7
+   129  13328  finishDepalletize                    59            7
+   130  13484    finishPalletize  1111141001011149555
+
+   131  13484     startPalletize   1111141001011149556
+
+   132  13512   StartDepalletize                    60           15
+   133  13846  finishDepalletize                    60           15
+   134  14014   StartDepalletize                    61            9
+   135  14258  finishDepalletize                    61            9
+   136  14259   StartDepalletize                    62            1
+   137  14499  finishDepalletize                    62            1
+   138  14500   StartDepalletize                    63           12
+   139  14689  finishDepalletize                    63           12
+   140  14690   StartDepalletize                    64           13
+   141  14858  finishDepalletize                    64           13
+   142  14869    finishPalletize  1111141001011149556
+
+   143  14869     startPalletize   1111141001011149553
+
+   144  14915   StartDepalletize                    65           16
+   145  15124  finishDepalletize                    65           16
+   146  15125   StartDepalletize                    66           14
+   147  15337  finishDepalletize                    66           14
+   148  15338   StartDepalletize                    67           10
+   149  15584  finishDepalletize                    67           10
+   150  15884    finishPalletize  1111141001011149553
+
+   151  15884     startPalletize 111114100101114954951
+
+   152  17804   StartDepalletize                    68           22
+   153  18086  finishDepalletize                    68           22
+   154  18190    finishPalletize 111114100101114954951
+
+   155  18190     startPalletize 111114100101114954953
+
+   156  18211   StartDepalletize                    69           32
+   157  18432  finishDepalletize                    69           32
+   158  18433   StartDepalletize                    70            3
+   159  18687  finishDepalletize                    70            3
+   160  18688   StartDepalletize                    71           48
+   161  18827  finishDepalletize                    71           48
+   162  18842   StartDepalletize                    72            4
+   163  19171  finishDepalletize                    72            4
+   164  19172   StartDepalletize                    73           21
+   165  19335  finishDepalletize                    73           21
+   166  19697   StartDepalletize                    74           31
+   167  19974  finishDepalletize                    74           31
+   168  19975   StartDepalletize                    75           18
+   169  20124  finishDepalletize                    75           18
+   170  20125   StartDepalletize                    76           34
+   171  20291  finishDepalletize                    76           34
+   172  20292   StartDepalletize                    77           27
+   173  20508  finishDepalletize                    77           27
+   174  20509   StartDepalletize                    78           28
+   175  20627  finishDepalletize                    78           28
+   176  20686   StartDepalletize                    79           25
+   177  20959  finishDepalletize                    79           25
+   178  20960   StartDepalletize                    80           19
+   179  21205  finishDepalletize                    80           19
+   180  21206   StartDepalletize                    81           20
+   181  21439  finishDepalletize                    81           20
+   182  21440   StartDepalletize                    82            2
+   183  21685  finishDepalletize                    82            2
+   184  21686   StartDepalletize                    83           23
+   185  21728  finishDepalletize                    83           23
+   186  21729   StartDepalletize                    84           24
+   187  21955  finishDepalletize                    84           24
+   188  21956   StartDepalletize                    85           15
+   189  22238  finishDepalletize                    85           15
+   190  22239   StartDepalletize                    86           16
+   191  22565  finishDepalletize                    86           16
+   192  22566   StartDepalletize                    87           26
+   193  22774  finishDepalletize                    87           26
+   194  22775   StartDepalletize                    88           29
+   195  22812    finishPalletize 111114100101114954953
+
+   196  22812     startPalletize   1111141001011149552
+
+   197  22967  finishDepalletize                    88           29
+   198  22968   StartDepalletize                    89           30
+   199  23157  finishDepalletize                    89           30
+   200  23158   StartDepalletize                    90            6
+   201  23399  finishDepalletize                    90            6
+   202  23400   StartDepalletize                    91            7
+   203  23644  finishDepalletize                    91            7
+   204  23645   StartDepalletize                    92           33
+   205  23711  finishDepalletize                    92           33
+   206  23712   StartDepalletize                    93           35
+   207  23779    finishPalletize  1111141001011149552
+
+   208  23779     startPalletize 111114100101114954952
+
+   209  23885  finishDepalletize                    93           35
+   210  23886   StartDepalletize                    94            5
+   211  24113  finishDepalletize                    94            5
+   212  24114   StartDepalletize                    95            8
+   213  24336  finishDepalletize                    95            8
+   214  24337   StartDepalletize                    96            9
+   215  24581  finishDepalletize                    96            9
+   216  24582   StartDepalletize                    97           11
+   217  24801  finishDepalletize                    97           11
+   218  24802   StartDepalletize                    98           12
+   219  25071  finishDepalletize                    98           12
+   220  25072   StartDepalletize                    99           14
+   221  25279  finishDepalletize                    99           14
+   222  25280   StartDepalletize                   100           36
+   223  25429  finishDepalletize                   100           36
+   224  25430   StartDepalletize                   101           37
+   225  25602  finishDepalletize                   101           37
+   226  25603   StartDepalletize                   102           38
+   227  25739  finishDepalletize                   102           38
+   228  25740   StartDepalletize                   103           39
+   229  26057  finishDepalletize                   103           39
+   230  26058   StartDepalletize                   104           31
+   231  26302  finishDepalletize                   104           31
+   232  26303   StartDepalletize                   105           27
+   233  26487  finishDepalletize                   105           27
+   234  26488   StartDepalletize                   106            1
+   235  26735  finishDepalletize                   106            1
+   236  26736   StartDepalletize                   107           40
+   237  26825  finishDepalletize                   107           40
+   238  26826   StartDepalletize                   108           17
+   239  27026  finishDepalletize                   108           17
+   240  27027   StartDepalletize                   109           41
+   241  27268  finishDepalletize                   109           41
+   242  27269   StartDepalletize                   110           13
+   243  27611  finishDepalletize                   110           13
+   244  27612   StartDepalletize                   111           42
+   245  27796  finishDepalletize                   111           42
+   246  27797   StartDepalletize                   112           43
+   247  27981  finishDepalletize                   112           43
+   248  27982   StartDepalletize                   113           44
+   249  28191  finishDepalletize                   113           44
+   250  28192   StartDepalletize                   114           45
+   251  28606  finishDepalletize                   114           45
+   252  28607   StartDepalletize                   115           29
+   253  28845    finishPalletize 111114100101114954952
+
+   254  28845     startPalletize 111114100101114954949
+
+   255  28867  finishDepalletize                   115           29
+   256  28868   StartDepalletize                   116           18
+   257  29070  finishDepalletize                   116           18
+   258  29071   StartDepalletize                   117           32
+   259  29244  finishDepalletize                   117           32
+   260  29245   StartDepalletize                   118           34
+   261  29489  finishDepalletize                   118           34
+   262  29490   StartDepalletize                   119           10
+   263  29777  finishDepalletize                   119           10
+   264  29778   StartDepalletize                   120           46
+   265  30066  finishDepalletize                   120           46
+   266  30067   StartDepalletize                   121           19
+   267  30335  finishDepalletize                   121           19
+   268  30336   StartDepalletize                   122           47
+   269  30520  finishDepalletize                   122           47
+   270  30521   StartDepalletize                   123           48
+   271  30615  finishDepalletize                   123           48
+   272  30616   StartDepalletize                   124           49
+   273  30829    finishPalletize 111114100101114954949
+
+   274  30829     startPalletize 111114100101114954948
+
+   275  30861  finishDepalletize                   124           49
+   276  31191   StartDepalletize                   125           20
+   277  31486  finishDepalletize                   125           20
+   278  31487   StartDepalletize                   126           17
+   279  31762  finishDepalletize                   126           17
+   280  31982   StartDepalletize                   127           15
+   281  32272  finishDepalletize                   127           15
+   282  32353   StartDepalletize                   128           21
+   283  32589    finishPalletize 111114100101114954948
+
+   284  32589     startPalletize   1111141001011149554
+
+   285  32639  finishDepalletize                   128           21
+   286  32640   StartDepalletize                   129            4
+   287  32898  finishDepalletize                   129            4
+   288  33078   StartDepalletize                   130            2
+   289  33312  finishDepalletize                   130            2
+   290  33482   StartDepalletize                   131            7
+   291  33850  finishDepalletize                   131            7
+   292  33872    finishPalletize   1111141001011149554
+

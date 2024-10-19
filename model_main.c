@@ -493,14 +493,14 @@ void ConveyorsInit()
     Store.kill_prog = false;
     int values[] = {48, 43, 46, 46, 43, 46, 46, 38, 33, 41, 38, 33, 33, 30, 57, 30, 23, 20, 17, 17, 15, 10, 7, 7, 7, 7, 20, 7, 12, 7, 23, 10, 7, 10, 7, 7, 7, 7, 7, 7, 7, 12, 7, 7, 10, 7, 7, 10, 7, 7};
     int distribution[] = {20, 17, 18, 18, 17, 18, 18, 15, 13, 16, 15, 13, 13, 12, 25, 12, 9, 8, 7, 7, 6, 4, 3, 3, 3, 3, 8, 3, 5, 3, 9, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 4, 3, 3, 4, 2, 1};
-    int sum = 0;
+  
     for (int i = 1; i < high_border - low_border + 1; ++i) {
       Store.thrs_for_each_sku[i] = distribution[i - 1] + distribution[i - 1] / 2;
     // printf("%d ", Store.thrs_for_each_sku[i]);
       Store.max_boxes_for_each_sku[i] = values[i - 1] + 4;
-      sum += Store.max_boxes_for_each_sku[i];
+
     }
-    printf("%d\n", sum);
+
 
     for (int i = 0; i < MAX_CONVEYORS; ++i) {
        // Store.conveyor_width[i] = i % 5 + 1;
@@ -647,62 +647,26 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
   int self = lp->gid;
   *(int *) bf = (int) 0;
   SWAP(&(s->value), &(in_msg->contents));
-  if (check == 1) {
-    printf("I m on 651\n");
-  }
   Store.kill_prog = 0;
   int ok_take_in = 1;
   for (int i = 0; i < MAX_ROBOTS; ++i) {
-    if (check == 1) {
-      printf("I m on 657\n");
-    }
+
     if (Store.robots[i].kill == 1) {
-      if (check == 1) {
-        printf("I m on 661\n");
-      }
       Store.kill_prog = 1;
-      printf("I M FUCKING HERE %d\n", i);
       ok_take_in = 0;
     }
   }
-  if (check == 1) {
-    printf("I m on 669  %d %d\n", Store.kill_prog, self);
-  }
   if (self == 0 && Store.kill_prog == 0) {
-    if (check == 1) {
-      printf("I m on 673\n");
-    }
     int not_do = 0;
     for (int i = 1; i < MAX_ROBOTS + 1; ++i) {
-      if (check == 1) {
-        printf("I m on 678\n");
-      }
       if (Store.used[i] == 1) {
-        if (check == 1) {
-          printf("I m on 682\n");
-        }
         not_do = 1;
       }
     }
-    if (check == 1) {
-      printf("I m on 688\n");
-    }
     if (not_do == 0) {
-      if (check == 1) {
-        printf("I m on 692\n");
-      }
       glb_time += 1;
       if (Store.boxes_to_deliver <= 0) {
-        if (check == 1) {
-          printf("I m on 697\n");
-        }
         for (int i = 1; i < high_border - low_border + 1; ++i) {
-          if (check == 1) {
-            printf("I m on 701\n");
-          }
-          if (i == 50 ) {
-            printf("I AM HERE\n");
-          }
           int thrs;
           int thrs_to_up;
           if (i <= 20) {
@@ -713,17 +677,11 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
             thrs_to_up = 16;
           }
           if (ok_take_in && Store.cnt_boxes_type[i] <= Store.thrs_for_each_sku[i]) {
-            if (check == 1) {
-              printf("I m on 717\n");
-            }
+
+
             Store.boxes_to_deliver = Store.max_boxes_for_each_sku[i] - Store.cnt_boxes_type[i];
             Store.type_to_add = i;          
             //printf("%d %d\n", Store.type_to_add, Store.boxes_to_deliver);
-            printf("SUKA %d %d\n", i, Store.thrs_for_each_sku[i]);
-            for (int j = 1; j < high_border - low_border + 1; ++j) {
-               printf("%d ", Store.cnt_boxes_type[j]);
-            }
-            printf("\n");
 
             for (int cur_robot = 0; cur_robot < MAX_ROBOTS; ++cur_robot) {
               if (Store.robots[i - 1].cur_task != 3 && (Store.robots[cur_robot].cur_task == 1 || Store.boxes_to_deliver >= cur_robot + 1) && Store.robots[cur_robot].cur_task != 2) {
@@ -739,11 +697,7 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
               }
             }
             //printf("\n");
-            if (i == 49 || i == 50) {
-              check = 1;
-              printf("CHECK %d, sku=%d\n", check, i);
-            }
-
+  
             // printf("%d %d\n", Store.type_to_add, Store.boxes_to_deliver);
 
             
@@ -785,10 +739,8 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
             if (Store.robots[process - 1].row != 7) {
               Store.used[process] = 1;
               Store.messages[process - 1].type = REVERSE;
-              printf("REVERSE\n");
             } else {
               Store.used[process] = 1;
-              printf("TAKE_OUT\n");
               Store.messages[process - 1].type = TAKE_OUT;
             }
           } else {
@@ -803,11 +755,9 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
 
               if (Store.robots[process - 1].row != 7) {
                 Store.used[process] = 1;
-                printf("REVERSE\n");
                 Store.messages[process - 1].type = REVERSE;
               } else {
                 Store.used[process] = 1;
-                printf("TAKE_OUT\n");
                 Store.messages[process - 1].type = TAKE_OUT;
               }
             } else {
@@ -840,7 +790,6 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
           }
           Store.robots[i - 1].cur_task = 3;
           Store.used[i] = 1;
-          // printf("GO\n");
           Store.messages[i - 1].type = GO;
         }
       }
@@ -858,13 +807,7 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
     switch (in_msg->type)
     {
       case TAKE_IN:
-        if (check == 1) {
-          printf("I m on 862\n");
-        }
         if (Store.robots[self - 1].has_box == -1 && Store.robots[self - 1].cur_cell.id == Store.robots[self - 1].goal_cell.id) {
-          if (check == 1) {
-            printf("I m on 866\n");
-          }
           if (Store.robots[self - 1].cur_time == 1) {
             add_to_queue(self - 1, Store.robots[self - 1].cur_cell.id + 1);
             del_from_queue(self - 1);
@@ -967,9 +910,6 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
 
 
         } else if (Store.robots[self - 1].has_box == 1 && Store.robots[self - 1].cur_cell.id == Store.robots[self - 1].goal_cell.id) {
-          if (check == 1) {
-            printf("I m on 971\n");
-          }
           Store.robots[self - 1].goal_time = 8;
           if (Store.robots[self - 1].cur_time == 1) {
             add_to_queue(self - 1, Store.robots[self - 1].cur_cell.id + 1);
@@ -1032,9 +972,6 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
           }
 
         } else {
-          if (check == 1) {
-            printf("I m on 1036\n");
-          }
           int next_vert = next_vertex(Store.robots[self - 1].cur_cell.id, Store.robots[self - 1].goal_cell.id);
 
           if (Store.direction_graph[Store.robots[self - 1].cur_cell.id] != -1 && Store.direction_graph[next_vert] != -1) { // если оба стыка
@@ -1110,9 +1047,7 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
         break;
 
       case TAKE_OUT:
-        if (check == 1) {
-          printf("I m on 1114\n");
-        }
+
 
         if (Store.robots[self - 1].has_box == -1 && Store.robots[self - 1].cur_cell.id == Store.robots[self - 1].goal_cell.id) {
           
@@ -1288,9 +1223,7 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
         break;
         
       case REVERSE:
-        if (check == 1) {
-          printf("I m on 1292\n");
-        }
+
 
         if (Store.robots[self - 1].has_box == -1 && Store.robots[self - 1].cur_cell.id == Store.robots[self - 1].goal_cell.id) {
           
@@ -1323,9 +1256,7 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
             Store.robots[self - 1].cur_time = 0;
             Store.robots[self - 1].low_SKU = Store.conveyor[Store.robots[self - 1].col].boxes[7].SKU;
             rev_quantity += 1;
-            if (rev_quantity % 100 == 0) {
-              printf("%d\n", rev_quantity);
-            }
+
             Remove_Boxes(&(Store.db), Store.robots[self - 1].low_SKU, &(glb_time), &(event_id), self);
             Store.robots[self - 1].cur_box = Store.robots[self - 1].low_SKU;
             fprintf(f, "%*d %*d %*d     movebox2bot       %*s     %*s     %*d    %*d   %*d\n", 6, event_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.vertexes[Store.robots[self - 1].cur_cell.id + 1], 4, Store.robots[self - 1].low_SKU, 4, Store.robots[self - 1].col, 2, 0);
@@ -1483,31 +1414,14 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
         }
         break;
       case GO:
-        if (check == 1) {
-          printf("I m on 1487\n");
-        }
 
-        if (cur_boxes >= 1190) {
-          if (check == 1) {
-          printf("I m on 1492\n");
-        }
-          break;
-        }
+       
         if (Store.robots[self - 1].cur_cell.id == Store.robots[self - 1].goal_cell.id) {
-          if (check == 1) {
-          printf("I m on 1498\n");
-        }
           if (Store.robots[self - 1].cur_time == 1) {
-            if (check == 1) {
-          printf("I m on 1502\n");
-        }
             Store.robots[self - 1].goal_time = 6;
             add_to_queue(self - 1, Store.robots[self - 1].cur_cell.id + 1);
             del_from_queue(self - 1);
             if (glb_time > 1) {
-              if (check == 1) {
-          printf("I m on 1509\n");
-        }
               fprintf(f, "%*d %*d %*d    finishMotion       %*s     %*s     %*d    %*d   %*d\n", 6, event_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].prev_vertex], 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.robots[self - 1].prev_box_type, 4, Store.robots[self - 1].prev_channel, 2, Store.robots[self - 1].prev_tr_id);
               event_id += 1;
             }
@@ -1518,29 +1432,15 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
           }
 
           if (Store.robots[self - 1].cur_time >= Store.robots[self - 1].goal_time) {
-            if (check == 1) {
-          printf("I m on 1522\n");
-        }
             if (Store.cells[Store.robots[self - 1].cur_cell.id + 1].queue[0] != -1 && Store.cells[Store.robots[self - 1].cur_cell.id + 1].queue[0] != self - 1) {
-              if (check == 1) {
-          printf("I m on 1526\n");
-        }
               if (self == MAX_ROBOTS) {
-                if (check == 1) {
-          printf("I m on 1530\n");
-        }
                 Send_Event(0, GO, lp, &(lp->gid));
               } else {
-                if (check == 1) {
-          printf("I m on 1535\n");
-        }
                 Send_Event(self + 1, Store.messages[self].type, lp, &(lp->gid));
               }
               break;
             }
-            if (check == 1) {
-          printf("I m on 1542\n");
-        }
+
             Store.robots[self - 1].tmp_fl = 1;
 
             Store.robots[self - 1].cur_time = 0;
@@ -1555,9 +1455,6 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
             //event_id += 1;
           }
         } else {
-          if (check == 1) {
-          printf("I m on 1559\n");
-        }
           int next_vert = next_vertex(Store.robots[self - 1].cur_cell.id, Store.robots[self - 1].goal_cell.id);
           
           if (Store.direction_graph[Store.robots[self - 1].cur_cell.id] != -1 && Store.direction_graph[next_vert] != -1) { // если оба стыка
@@ -1574,26 +1471,18 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
           if (Store.robots[self - 1].cur_time == 1) {
             add_to_queue(self - 1, next_vert);
             del_from_queue(self - 1);
-            if (check == 1) {
-          printf("I m on 1578\n");
-        }
+
             if (glb_time > 1) {
               fprintf(f, "%*d %*d %*d    finishMotion       %*s     %*s     %*d    %*d   %*d\n", 6, event_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].prev_vertex], 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.robots[self - 1].prev_box_type, 4, Store.robots[self - 1].prev_channel, 2, Store.robots[self - 1].prev_tr_id);
               event_id += 1;
-              if (check == 1) {
-          printf("I m on 1584\n");
-        }
+
             }
             if (Store.robots[self - 1].has_box == 1) {
-              if (check == 1) {
-          printf("I m on 1589\n");
-        }
+  
               fprintf(f, "%*d %*d %*d     startMotion       %*s     %*s     %*d    %*d   %*d\n", 6, event_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.vertexes[next_vert], 4, 0, 4, Store.robots[self - 1].col % 10 + 1, 2, 0);
               fprintf(control_system_log, "%*d %*d %*d     startMotion       %*s     %*s     %*d    %*d   %*d\n", 6, control_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.vertexes[next_vert], 4, 0, 4, Store.robots[self - 1].col % 10 + 1, 2, 0);
             } else {
-              if (check == 1) {
-          printf("I m on 1595\n");
-        }
+
               fprintf(f, "%*d %*d %*d     startMotion       %*s     %*s     %*d    %*d   %*d\n", 6, event_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.vertexes[next_vert], 4, 0, 4, Store.robots[self - 1].col % 10 + 1, 2, 0);
               fprintf(control_system_log, "%*d %*d %*d     startMotion       %*s     %*s     %*d    %*d   %*d\n", 6, control_id, 6, glb_time, 4, self, 4, Store.vertexes[Store.robots[self - 1].cur_cell.id], 4, Store.vertexes[next_vert], 4, 0, 4, Store.robots[self - 1].col % 10 + 1, 2, 0);
             }
@@ -1602,30 +1491,19 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
           }
 
           if (Store.robots[self - 1].cur_time >= Store.robots[self - 1].goal_time) {
-            if (check == 1) {
-          printf("I m on 1606\n");
-        }
+  
             if (Store.cells[next_vert].queue[0] != -1 && Store.cells[next_vert].queue[0] != self - 1) {
-              if (check == 1) {
-          printf("I m on 1610\n");
-        }
               if (self == MAX_ROBOTS) {
-                if (check == 1) {
-          printf("I m on 1614\n");
-        }
+
                 Send_Event(0, GO, lp, &(lp->gid));
               } else {
-                if (check == 1) {
-          printf("I m on 1619\n");
-        }
+
                 Send_Event(self + 1, Store.messages[self].type, lp, &(lp->gid));
               }
               break;
             }
             Store.robots[self - 1].tmp_fl = 1;
-            if (check == 1) {
-          printf("I m on 1627\n");
-        }
+
             Store.robots[self - 1].cur_time = 0;
 
             // if (Store.robots[self - 1].has_box == 1) {
@@ -1652,14 +1530,10 @@ void model_event (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
         }
       
         if (self == MAX_ROBOTS) {
-          if (check == 1) {
-          printf("I m on 1656\n");
-        }
+    
           Send_Event(0, GO, lp, &(lp->gid));
         } else {
-          if (check == 1) {
-          printf("I m on 1661\n");
-        }
+   
           Send_Event(self + 1, Store.messages[self].type, lp, &(lp->gid));
         }
         break;
@@ -1678,10 +1552,9 @@ void model_event_reverse (state *s, tw_bf *bf, message *in_msg, tw_lp *lp) {
 
 //report any final statistics for this LP
 void model_final (state *s, tw_lp *lp) {
-  printf("UH\n");
   if (lp->gid == 0) {
     write_csv("Store.csv", Store.db);
-    printf("UH2\n");
+    printf("reverse quatity: %d", rev_quantity);
     fprintf(paleta, "%*d %*d %*s %*s", 6, rec_id, 6, glb_time, 18, "finishPalletize", 22, Store.cur_order);
     fprintf(paleta, "\n");
     rec_id++;

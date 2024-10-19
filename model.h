@@ -56,7 +56,6 @@ static const int threshold = (int)((MAX_BOXES * MAX_CONVEYORS) / (high_border - 
 
 static int rev_quantity = 0;
 
-static int check = 0;
 
 typedef struct
 {
