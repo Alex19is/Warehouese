@@ -6,13 +6,13 @@
 //   - setup function to place LPs and KPs on PEs
 //   - local map function to find LP in local PE's array
 
-#include "model.h"
+// #include "model.h"
 
-//Given an LP's GID (global ID)
-//return the PE (aka node, MPI Rank)
-tw_peid model_map(tw_lpid gid){
-  return (tw_peid) gid / g_tw_nlp;
-}
+// //Given an LP's GID (global ID)
+// //return the PE (aka node, MPI Rank)
+// tw_peid model_map(tw_lpid gid){
+//   return (tw_peid) gid / g_tw_nlp;
+// }
 
 /*
 // Multiple LP Types mapping function

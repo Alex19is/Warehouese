@@ -54,6 +54,8 @@ FILE *control_system_log;
 const static double g_robot_calc_time = 0.001;
 static const int threshold = (int)((MAX_BOXES * MAX_CONVEYORS) / (high_border - low_border));
 
+static int rev_quantity = 0;
+
 typedef struct
 {
     bool reserved;
@@ -144,6 +146,9 @@ struct _Store
 
     char cur_order[50];
 
+    int max_boxes_for_each_sku[50];
+    int thrs_for_each_sku[50]; 
+
     char files[15][1024];
     int cur_file;
 
@@ -156,12 +161,11 @@ struct _Store
     robot robots[MAX_ROBOTS];
     cell cells[MAX_VERTEXES];
 
-    
-    int b_w[high_border - low_border + 1];
-    box_pair box_width[high_border - low_border + 1];
+    int b_w[51];
+    box_pair box_width[51];
     int conveyor_width[MAX_CONVEYORS];
-    int cnt_boxes_type[high_border - low_border + 1];
-    int cnt_boxes_type_const[high_border - low_border + 1];
+    int cnt_boxes_type[51];
+    int cnt_boxes_type_const[51];
     struct _conveyor conveyor[MAX_CONVEYORS];
 
     int used[MAX_ROBOTS + 1];
