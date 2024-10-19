@@ -56,6 +56,8 @@ static const int threshold = (int)((MAX_BOXES * MAX_CONVEYORS) / (high_border - 
 
 static int rev_quantity = 0;
 
+static int check = 0;
+
 typedef struct
 {
     bool reserved;
@@ -144,10 +146,10 @@ struct _Store
 
     message messages[MAX_ROBOTS];
 
-    char cur_order[50];
+    int max_boxes_for_each_sku[51];
+    int thrs_for_each_sku[51];
 
-    int max_boxes_for_each_sku[50];
-    int thrs_for_each_sku[50]; 
+    char cur_order[50];
 
     char files[15][1024];
     int cur_file;
@@ -161,6 +163,7 @@ struct _Store
     robot robots[MAX_ROBOTS];
     cell cells[MAX_VERTEXES];
 
+    
     int b_w[51];
     box_pair box_width[51];
     int conveyor_width[MAX_CONVEYORS];
